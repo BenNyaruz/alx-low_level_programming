@@ -1,29 +1,37 @@
 #include <stdio.h>
 
 /**
-* main - Print combinations of two digit numbers
-*
-* Return: Always 0 (Success)
-*/
+ * main - Prints numbers between 00 to 89.
+ *
+ * Return: Always 0 (Success)
+ */
 int main(void)
 {
-	int tens;
-	int ones;
-	for (tens = 0; tens <= 9; tens++)
-    	{
-      		for (ones = tens + 1; ones <= 9; ones++)
+	int i, e;
+
+	i = 48;
+	e = 48;
+
+	while (e < 58)
+	{
+		i = 48;
+		while (i < 58)
 		{
-	  		putchar(tens + '0');
-	  		putchar(ones + '0');
-
-	  		if (tens < 8)
-	   		 {
-	     			 putchar(',');
-	      			 putchar(' ');
-	    		 }
+			if (e != i && e < i)
+			{
+				putchar(e);
+				putchar(i);
+				if (i == 57 && e == 56)
+				{
+					break;
+				}
+				putchar(',');
+				putchar(' ');
+			}
+			i++;
 		}
-    	}
-  	putchar('\n');
-
- 	return (0);
+		e++;
+	}
+	putchar('\n');
+	return (0);
 }
